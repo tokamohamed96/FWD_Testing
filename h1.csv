@@ -1,0 +1,4 @@
+InvoiceHeader{invoiceNumber=1, inoiceDate=22-11-2020, customerName=Ali}
+InvoiceHeader{invoiceNumber=2, inoiceDate=13-10-2021, customerName=Saleh}
+InvoiceHeader{invoiceNumber=3, inoiceDate=14-10-2022, customerName=Toka}
+InvoiceHeader{invoiceNumber=4, inoiceDate=02-02-2022, customerName=rami}
