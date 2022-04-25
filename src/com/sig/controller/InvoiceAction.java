@@ -155,6 +155,8 @@ public class InvoiceAction implements ActionListener {
         } catch (ParseException ex) {
             JOptionPane.showMessageDialog(f, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+        System.out.println("Info of Loaded File: ");
+        f.PrintInvoicesDetails();
     }
 
     private void saveFile() {
@@ -188,12 +190,15 @@ public class InvoiceAction implements ActionListener {
                 Logger.getLogger(InvoiceAction.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-        }
+        }        System.out.println("Info of Saved File: ");
+
+                f.PrintInvoicesDetails();
     }
 
     private void createInvoice() {
          dialog = new InvoiceDialog(f);
         dialog.setVisible(true);
+        
     }
 
     private void deleteInvoice() {
@@ -211,7 +216,9 @@ public class InvoiceAction implements ActionListener {
    
 
         
-        }    }
+        }        System.out.println("Info of File After Invoice Deletion: ");
+
+        f.PrintInvoicesDetails();  }
 
     private void createLine() {
 
@@ -231,8 +238,9 @@ public class InvoiceAction implements ActionListener {
   f.getInvoiceHtbl().setRowSelectionInterval(selectedLine, selectedLine);
 
  
-      }
-      
+      }        System.out.println("Info of File After Line Deletion: ");
+
+              f.PrintInvoicesDetails();
     }
 
     private void displayDialog() {
@@ -284,7 +292,8 @@ lineDialog.setVisible(false);
  }
  f.getInvoiceHtbl().setRowSelectionInterval(selectedHeader, selectedHeader);
         lineDialog.dispose();
-        lineDialog = null;      }
+        lineDialog = null;   
+        f.PrintInvoicesDetails(); }
 
     private void CancelLine() {
 lineDialog.setVisible(false);

@@ -1,7 +1,5 @@
 InvoiceLine{ Invoice number: 1, product=Mobile, price=3200.0, count=1}
 InvoiceLine{ Invoice number: 1, product=Cover, price=20.0, count=2}
 InvoiceLine{ Invoice number: 1, product=Headphone, price=130.0, count=1}
-InvoiceLine{ Invoice number: 2, product=Laptop, price=4000.0, count=1}
-InvoiceLine{ Invoice number: 2, product=Mouse, price=35.0, count=1}
 InvoiceLine{ Invoice number: 3, product=laptop, price=65000.0, count=1}
 InvoiceLine{ Invoice number: 4, product=cover, price=20.0, count=5}

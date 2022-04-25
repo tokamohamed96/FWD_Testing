@@ -29,7 +29,6 @@ private InvoiceFrame f;
     @Override
     public void valueChanged(ListSelectionEvent lse) {
         int selectedIndex = f.getInvoiceHtbl().getSelectedRow();
-        System.out.println("Invoice Selected" + selectedIndex);
         if(selectedIndex != -1){
         InvoiceHeader invoiceSelected = f.getInvoicesArray().get(selectedIndex);
         ArrayList <InvoiceLine> lines = invoiceSelected.getLines();

@@ -12,6 +12,7 @@ import com.sig.model.InvoiceHeaderTable;
 import com.sig.model.InvoiceLine;
 import com.sig.model.InvoiceLineTable;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -253,6 +254,7 @@ public class InvoiceFrame extends javax.swing.JFrame {
     private InvoiceAction invoiceAction = new InvoiceAction(this);
     private ArrayList<InvoiceHeader> invoicesArray;
     private ArrayList<InvoiceLine> lines;
+    private SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 
     public ArrayList<InvoiceLine> getLines() {
         return lines;
@@ -329,6 +331,14 @@ public class InvoiceFrame extends javax.swing.JFrame {
 
     public InvoiceAction getInvoiceAction() {
         return invoiceAction;
+    }
+    
+    public void PrintInvoicesDetails(){
+    
+    for(InvoiceHeader in : invoicesArray){
+    
+        System.out.println("Invoice: \n Number = "+in.getInvoiceNumber()+" , Customer: "+in.getCustomerName()+" , Date: "+df.format(in.getInoiceDate())+" , Total = "+in.getInvoiceTotal());
+    }System.out.println("------------------------------------------");
     }
 
    
