@@ -82,10 +82,8 @@ public class InvoiceAction implements ActionListener {
                 break;
                 
             case "Ok":
-        {
-            displayDialog();
-        }
-            break;
+                 displayDialog();
+                  break;
             
             case "Cancel":
                 cancelDialog();
@@ -162,10 +160,11 @@ public class InvoiceAction implements ActionListener {
     private void saveFile() {
         ArrayList <InvoiceHeader> invoiceList = f.getInvoicesArray();
         JFileChooser c = new JFileChooser();
+        try {
         int r = c.showSaveDialog(f);
         if(r == JFileChooser.APPROVE_OPTION){
         File header = c.getSelectedFile();
-            try {
+            
                 FileWriter save = new FileWriter(header);
                 String invoicesHeaders = "";
                 String inoicesLines = "";
@@ -177,8 +176,8 @@ public class InvoiceAction implements ActionListener {
                 inoicesLines += "\n";
                 }
                 }
-                invoicesHeaders = invoicesHeaders.substring(0, invoicesHeaders.length()-1);
-                inoicesLines = inoicesLines.substring(0, inoicesLines.length()-1);
+               // invoicesHeaders = invoicesHeaders.substring(0, invoicesHeaders.length()-1);
+              ///  inoicesLines = inoicesLines.substring(0, inoicesLines.length()-1);
                 r = c.showSaveDialog(f);
                 File lineFiles = c.getSelectedFile();
                 FileWriter lineWrite = new FileWriter(lineFiles);
@@ -186,11 +185,12 @@ public class InvoiceAction implements ActionListener {
                 lineWrite.write(inoicesLines);
                 save.close();
                 lineWrite.close();
+        }
             } catch (IOException ex) {
-                Logger.getLogger(InvoiceAction.class.getName()).log(Level.SEVERE, null, ex);
+               JOptionPane.showMessageDialog(f, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
             
-        }        System.out.println("Info of Saved File: ");
+               System.out.println("Info of Saved File: ");
 
                 f.PrintInvoicesDetails();
     }
@@ -251,7 +251,7 @@ Date d = new Date();
         try {
             d = df.parse(date);
         } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(f,"Invalid Input", "Invalid", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(f,"Invalid Date", "Date format", JOptionPane.ERROR_MESSAGE);
         }
 
 

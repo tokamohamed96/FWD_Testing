@@ -79,7 +79,7 @@ public class InvoiceLine {
     
         @Override
     public String toString() {
-        return "InvoiceLine{ Invoice number: " + header.getInvoiceNumber()+ ", product=" + product + ", price=" + price + ", count=" + count + '}';
+        return  header.getInvoiceNumber()+ "," + product + "," + price + "," + count;
     }
 
 }

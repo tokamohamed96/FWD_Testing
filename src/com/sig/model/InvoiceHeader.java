@@ -78,7 +78,7 @@ public class InvoiceHeader {
 
     @Override
     public String toString() {
-        return "InvoiceHeader{" + "invoiceNumber=" + invoiceNumber + ", inoiceDate=" + date.format(inoiceDate) +", customerName=" + customerName  + '}';
+        return  invoiceNumber + "," + date.format(inoiceDate) +"," + customerName;
     }
 
     
